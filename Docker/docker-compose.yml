@@ -15,7 +15,7 @@ services:
       - PHP_MAX_EXECUTION_TIME=30
 
   nginx:
-    image: nginx:stable-otel
+    image: nginx:alpine
     container_name: laravel_nginx
     ports:
       - "80:80"
