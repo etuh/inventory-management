@@ -1,115 +1,86 @@
-# Inventory Management System - User Manual
+# Company Equipment Tracking System - User Manual
 
-Welcome to the **Inventory Management System**. This user manual will guide you through the features of the application, helping you track your items, manage stock levels, and navigate the dashboard effectively.
+Welcome to the **Equipment Tracking System**. This application is designed exclusively for recording and managing internal company equipment, tools, and accessories. It provides a centralized way to track exactly who has been assigned a specific piece of equipment, their department, the technical specifications of the item, and its current physical condition.
 
 ---
 
 ## 1. Getting Started
 
 ### 1.1 Creating an Account
-
-1. Open your web browser and navigate to the application's URL (e.g., `http://localhost:8000`).
+1. Open your web browser and navigate to the application's URL.
 2. Click on the **Register** link located on the welcome page.
 3. Fill in your **Name**, **Email Address**, and a secure **Password**.
 4. Confirm your password and click **Register**.
-5. Once registered, you will be automatically logged in and redirected to your Dashboard.
+5. You will be authenticated and redirected to the Dashboard.
 
 ### 1.2 Logging In
-
-If you already have an account:
-
 1. Navigate to the application's URL.
 2. Click on **Log In**.
 3. Enter your registered email address and password.
-4. (Optional) Check "Remember Me" to stay logged in on your current device.
-5. Click **Log In**.
+4. Click **Log In**.
 
 ---
 
 ## 2. The Dashboard
 
-The Dashboard is your main command center. When you log in, you will see an overview of your inventory at a glance.
-
-- **KPI Metrics:** View high-level numbers such as Total Items, Low Stock Alerts, and Total Inventory Value.
-- **Recent Activity:** A quick feed showing the latest items added or modified.
-- **Alerts:** Critical notifications indicating which items are running low and need immediate restocking.
-- **Sidebar Navigation:** Use the left-hand navigation menu to seamlessly switch between the Dashboard, Inventory Items, and Settings.
+The Dashboard provides a high-level view of your company's equipment fleet:
+- **Equipment Overview:** See the total number of tools and assets currently tracked.
+- **Assignment Status:** View a breakdown of equipment by their deployment state (e.g., **Available** in the IT closet, **Assigned** to an employee, in **Maintenance**, or **Retired**).
+- **Condition Metrics:** Identify the health of your equipment with charts displaying overall conditions (**New**, **Ok**, or **Outdated**).
 
 ---
 
-## 3. Managing Inventory
+## 3. Configuration (Management)
 
-The core of the application revolves around item tracking. Navigate to the **Items** or **Inventory** section via the sidebar.
+Before you begin logging specific equipment, use the **Management** section to define the structure of your tools and your organization.
 
-### 3.1 Viewing the Item List
+### 3.1 Managing Equipment Categories (Inventories)
+Group your company assets into high-level categories (e.g., *IT Hardware*, *Power Tools*, *Office Furniture*).
+- **Create:** Click "Add", specify the category name, and save.
 
-The Item List provides a table view of all your inventory.
+### 3.2 Managing Device Types & Specs
+"Devices" represent the specific models or types of equipment you own (e.g., *Laptops*, *Drills*, *Monitors*).
+- **Add Device Type:** Give the device a name and place it under an existing category.
+- **Specification Fields:** Define the exact specs you want to track for this type of equipment (e.g., "Processor", "RAM", "Voltage", "Weight"). Every time you log a piece of equipment of this type, the system will prompt you for these specific details.
+- **Operating System / Additional Data:** Enable tracking for OS details or other custom network data (MAC Address, IP) if applicable.
 
-- **Sorting & Filtering:** Click on column headers (e.g., Name, SKU, Quantity, Price) to sort your items. Use the search bar to find specific products instantly.
-- **Stock Indicators:** Quantities are often color-coded (e.g., green for healthy stock, red for low stock) so you can quickly identify shortages.
-
-### 3.2 Adding a New Item
-
-1. On the Inventory page, click the **"Add Item"** or **"New Item"** button.
-2. A modal or form will slide open.
-3. Enter the necessary details:
-    - **Name:** The product or item name.
-    - **SKU (Stock Keeping Unit):** A unique identifier for the product.
-    - **Description:** A short detail about the item.
-    - **Quantity:** The initial stock level.
-    - **Price:** The unit cost or selling price.
-4. Click **Save** or **Create**. The list will update instantly without reloading the page.
-
-### 3.3 Editing an Existing Item
-
-1. Locate the item you wish to modify in the table.
-2. Click the **Edit** button (often represented by a pencil icon) next to the item.
-3. Update the required fields in the prompt.
-4. Click **Update** to save your changes.
-
-### 3.4 Adjusting Stock Levels
-
-When an item is sold or restocked, you must update the system:
-
-1. Click **Edit** on the item.
-2. Modify the **Quantity** field to reflect the new physical count.
-3. Click **Update**.
-
-### 3.5 Deleting an Item
-
-1. Locate the item in the list.
-2. Click the **Delete** button (often a trash can icon).
-3. A confirmation prompt will appear to prevent accidental deletions. Confirm to permanently remove the item from your system.
+### 3.3 Departments & Assignees
+To accurately track who has what:
+- **Departments:** Create a list of your company's departments (e.g., *Engineering*, *Marketing*, *Field Ops*).
+- **Assignees (External/Internal Users):** Keep a registry of employees, contractors, or external users who can receive equipment, so you always know who is accountable for a tool.
 
 ---
 
-## 4. User Profile & Settings
+## 4. Tracking Equipment & Tools (Inventory)
 
-To manage your account, click on your name or avatar in the top-right corner of the screen and select **Profile** or click **Settings** in the sidebar.
+Once your departments and device types are configured, navigate to the **Inventory** section to record individual pieces of equipment, tools, and accessories.
 
-### 4.1 Update Personal Information
+### 4.1 Recording a New Piece of Equipment
+1. Click the **New Asset** button.
+2. **Classification:** Select the broad category and the specific equipment type (Device).
+3. **Core Details:** Enter the **Name**, **Serial Number**, **Brand/Model**, **Model No**, and **Purchase Date**.
+4. **Current State:**
+   - **Condition:** Record if the item is *New*, *Ok*, or *Outdated*.
+   - **Status:** Mark the item as *Available*, *Assigned*, *Maintenance*, or *Retired*.
+5. **Assignment:** If you are handing this tool directly to someone, select the **Assigned User** (or custom **Assignee**) and note their **Department**. This ensures complete accountability.
+6. **Specs & Accessories:**
+   - Fill in the required **Specifications** (e.g., RAM, Processor) prompted by the system.
+   - List any **Accessories** that are bundled with this equipment (e.g., exactly which mouse, charger, or carrying case the user received).
+7. Click **Save** to add the equipment to the registry.
 
-- Under the **Profile Information** section, you can change your display name and email address. Ensure you click **Save** after making changes.
+### 4.2 Updating Assignments and Condition
+When an employee returns a tool, hands it to someone else, or if the equipment gets damaged:
+1. Locate the equipment in the list and click **Edit**.
+2. **Reassign:** Change the **Assigned User** or **Department** if it has moved to a new employee.
+3. **Update Condition:** If the item was returned damaged, change its condition from *Ok* to *Outdated* or change its status to *Maintenance*.
+4. Click **Save Changes** to maintain an accurate, up-to-date record.
 
-### 4.2 Change Password
-
-- To secure your account, go to the **Update Password** section.
-- Enter your Current Password, followed by your New Password.
-- Confirm the New Password and click **Save**.
-
-### 4.3 Log Out
-
-- To securely log out of the application, click on your profile name in the top-right corner and select **Log Out**.
+### 4.3 Retiring or Deleting Equipment
+- If equipment is lost, sold, or destroyed, you can mark its Status as *Retired*.
+- If you made a data-entry error, you can click the **Delete** button to permanently remove the record from the company database.
 
 ---
 
-## 5. Troubleshooting & FAQ
-
-**Q: I forgot my password, what do I do?**
-A: On the login page, click "Forgot your password?". Enter your email address to receive a secure password reset link.
-
-**Q: Why isn't the item data updating?**
-A: Ensure you have a stable internet connection. If the issue persists, try refreshing the page or clearing your browser cache.
-
-**Q: Can I restore a deleted item?**
-A: Unless soft-deletes are enabled by your system administrator, deleting an item is a permanent action. Please ensure you actually want to remove the item before confirming the deletion prompt.
+## 5. User Profile
+1. Click your name in the corner of the application to access your **Profile**.
+2. Update your personal name, email address, or change your password to keep the system secure.
