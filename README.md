@@ -7,6 +7,7 @@ Welcome to the **Inventory Management System**. This application is built using 
 - [Overview](#overview)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Docker Setup](#docker-setup)
 - [Usage Manual](#usage-manual)
 - [Development & Architecture](#development--architecture)
 - [Testing](#testing)
@@ -53,11 +54,13 @@ You can get the project up and running quickly by using Composer and Artisan com
 2. **Install PHP dependencies:**
 
     Ensure you have the required PHP extensions installed. For Alpine Linux (e.g., inside Docker), run:
+
     ```bash
     apk add php84-tokenizer php84-session php84-dom php84-fileinfo php84-xml php84-xmlwriter php84-simplexml
     ```
 
     Then, install the Composer dependencies:
+
     ```bash
     composer install
     ```
@@ -94,6 +97,42 @@ You can get the project up and running quickly by using Composer and Artisan com
     ```bash
     composer setup
     ```
+
+---
+
+## Docker Setup
+
+If you prefer to run the application using Docker, all necessary configuration is located in the `Docker/` directory.
+
+1. **Navigate to the Docker directory:**
+
+    ```bash
+    cd Docker
+    ```
+
+2. **Build and start the containers:**
+
+    ```bash
+    docker compose up -d --build
+    ```
+
+3. **Install dependencies and setup Laravel inside the container:**
+
+    ```bash
+    docker compose exec php composer install
+    docker compose exec php php artisan key:generate
+    docker compose exec php php artisan migrate
+    ```
+
+4. **Verify the Application:**
+   Once running, you can access your application at `http://localhost`.
+
+**Useful Docker Commands:**
+
+- Stop containers: `docker compose down`
+- View logs: `docker compose logs -f`
+- Run artisan commands: `docker compose exec php php artisan <command>`
+- Run tests (Pest): `docker compose exec php vendor/bin/pest`
 
 ---
 
