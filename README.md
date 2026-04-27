@@ -31,6 +31,7 @@ Features include:
 Ensure your server meets the following requirements:
 
 - **PHP:** ^8.4
+- **PHP Extensions:** Ensure `tokenizer`, `session`, `fileinfo`, `dom`, `xml`, `xmlwriter`, and `simplexml` are enabled in your `php.ini` (along with typical Laravel extensions like `curl`, `mbstring`, `openssl`, `zip`, etc.).
 - **Composer:** Latest version
 - **Node.js & NPM:** Latest LTS version (for compiling frontend assets)
 - **Database:** SQLite (default/dev), MySQL, or PostgreSQL.
@@ -51,6 +52,12 @@ You can get the project up and running quickly by using Composer and Artisan com
 
 2. **Install PHP dependencies:**
 
+    Ensure you have the required PHP extensions installed. For Alpine Linux (e.g., inside Docker), run:
+    ```bash
+    apk add php84-tokenizer php84-session php84-dom php84-fileinfo php84-xml php84-xmlwriter php84-simplexml
+    ```
+
+    Then, install the Composer dependencies:
     ```bash
     composer install
     ```
